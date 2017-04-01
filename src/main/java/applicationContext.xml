@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:annotation-config />
+
+	<!-- 1)データソースの設定 DriverManagerDataSourceクラスを利用する-->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- JDBCドライバクラス名の設定 -->
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<!-- JDBCの接続文字列の設定 -->
+		<property name="url">
+			<value>jdbc:mysql://192.168.33.12/spring</value>
+		</property>
+		<!-- MySQLのユーザIDの設定 -->
+		<property name="username">
+			<value>springuser</value>
+		</property>
+
+		<property name="password">
+			<value>springpassword</value>
+		</property>
+	</bean>
+
+	<bean id="menuUi" class="ui.MenuUi" />
+
+	<bean id="teamDao" class="dao.impl.TeamDaoImpl" />
+
+	<bean id="selectTeamUi" class="ui.SelectTeamUi" />
+
+	<bean id="playerDao" class="dao.impl.PlayerDaoImpl" />
+
+	<bean id="insertPlayerUi" class="ui.InsertPlayerUi" />
+
+	<bean id="selectPlayerUi" class="ui.SelectPlayerUi" />
+
+	<bean id="updatePlayerUi" class="ui.UpdatePlayerUi" />
+
+	<bean id="deletePlayerUi" class="ui.DeletePlayerUi" />
+
+</beans>
