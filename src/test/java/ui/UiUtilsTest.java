@@ -11,7 +11,7 @@ public class UiUtilsTest {
 	}
 
 	@Test
-	public void isSmallLength_nameがnullでない_nameの文字数がlengthより大きい() {
+	public void isSmallLength_nameがnullでない_nameの文字数がlengthより大きい_falseを返すこと() {
 		Assert.assertFalse(UiUtils.isSmallLength("testName", "fieldName", 3));
 	}
 }
