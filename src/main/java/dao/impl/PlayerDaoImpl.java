@@ -34,7 +34,7 @@ public class PlayerDaoImpl implements PlayerDao {
 
 	@Override
 	public void insertPlayer(Player player) throws DataAccessException {
-		// 選手追加
+		// 選手の追加
 		SqlUpdate sqlUpdate = new SqlUpdate(dataSource, INSERT_PLAYER);
 		sqlUpdate.declareParameter(new SqlParameter("name", Types.VARCHAR));
 		sqlUpdate.declareParameter(new SqlParameter("team_id", Types.INTEGER));
